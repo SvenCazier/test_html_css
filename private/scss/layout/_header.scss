@@ -10,12 +10,12 @@ header {
         color: white;
         ul {
             li {
-                /* volledige blokje klibaar maken */
                 &:first-child,
                 &:nth-child(2) {
                     border-bottom: 1px white dotted;
                 }
                 a {
+                    /* volledige blokje klikbaar maken */
                     display: block;
                     width: 100%;
                     padding: 0.5em 1em;
@@ -59,8 +59,8 @@ header {
                         &:nth-child(1n + 0) {
                             border-bottom: none;
                         }
-                        /* beetje vreemd om zonder border de volledige li klikbaar te maken, dus hier enkel de tekst */
                         a {
+                            /* beetje vreemd om zonder border de volledige li klikbaar te maken, dus hier enkel de tekst */
                             display: inline; /* 100% width vervalt hierdoor automatisch */
                             padding: 0;
                             margin-right: 1.5em;

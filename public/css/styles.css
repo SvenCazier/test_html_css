@@ -1,15 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Prevent font size inflation */
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -18,21 +27,21 @@ html {
     padding: 0;
 } */
 body {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
-  list-style: none;
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
-  font-size: 100%;
-  line-height: 1.5;
+	min-height: 100vh;
+	font-size: 100%;
+	line-height: 1.5;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -43,7 +52,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+	line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
@@ -51,7 +60,7 @@ h1,
 h2,
 h3,
 h4 {
-  text-wrap: balance;
+	text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
@@ -64,8 +73,8 @@ img,
 picture,
 svg,
 video {
-  max-width: 100%;
-  display: block;
+	max-width: 100%;
+	display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -73,253 +82,298 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
-  min-height: 10em;
+	min-height: 10em;
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 5ex;
+	scroll-margin-block: 5ex;
 }
 
 /* Voor alt text */
 img {
-  font-style: italic;
+	font-style: italic;
 }
 
 /* Verwijder anchor tag styling */
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 /* TYPOGRAFIE */
 body {
-  font-family: Poppins, system-ui, sans-serif;
+	font-family: Poppins, system-ui, sans-serif;
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  h1 {
-    font-size: 2.2em;
-  }
-  h2 {
-    font-size: 1.7em;
-  }
+	h1 {
+		font-size: 2.2em;
+	}
+	h2 {
+		font-size: 1.7em;
+	}
 }
 /* KLEUREN */
 body {
-  color: #222222;
+	color: #222222;
 }
 
 /* LISTS */
 ul.no-style,
 ol.no-style {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 /* HELPER */
 .hidden--xs {
-  display: none;
+	display: none;
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  /* LISTS */
-  ul.no-style--lg,
-  ol.no-style--lg {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  /* HELPER */
-  .hidden--xs {
-    display: block;
-  }
-  .hidden--lg {
-    display: none;
-  }
+	/* LISTS */
+	ul.no-style--lg,
+	ol.no-style--lg {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	/* HELPER */
+	.hidden--xs {
+		display: block;
+	}
+	.hidden--lg {
+		display: none;
+	}
 }
 .wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "header" "aside" "main";
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr;
+	grid-template-columns: 1fr;
+	grid-template-areas: "header" "aside" "main";
 }
 .wrapper header {
-  grid-area: header;
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	grid-area: header;
 }
 .wrapper aside {
-  grid-area: aside;
-  padding: 0 1em;
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+	grid-area: aside;
+	padding: 0 1em;
 }
 .wrapper main {
-  grid-area: main;
-  padding: 0 1em;
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
+	grid-area: main;
+	padding: 0 1em;
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  .wrapper {
-    background: #ff0000 url("../img/rothko/rothko17.jpg") no-repeat center center/cover;
-    grid-template-columns: 1fr clamp(0%, 70%, 770px) clamp(0%, 30%, 330px) 1fr;
-    grid-template-areas: "header header header header" ". main aside .";
-  }
-  .wrapper aside {
-    padding: 0;
-  }
-  .wrapper main {
-    padding: 4% 7%;
-  }
+	.wrapper {
+		background: #ff0000 url("../img/rothko/rothko17.jpg") no-repeat center center/cover;
+		-ms-grid-columns: 1fr clamp(0%, 70%, 770px) clamp(0%, 30%, 330px) 1fr;
+		grid-template-columns: 1fr clamp(0%, 70%, 770px) clamp(0%, 30%, 330px) 1fr;
+		grid-template-areas: "header header header header" ". main aside .";
+	}
+	.wrapper aside {
+		padding: 0;
+	}
+	.wrapper main {
+		padding: 4% 7%;
+	}
+	.wrapper header {
+		-ms-grid-row: 1;
+		-ms-grid-column: 1;
+		-ms-grid-column-span: 4;
+	}
+	.wrapper aside {
+		-ms-grid-row: 2;
+		-ms-grid-column: 3;
+	}
+	.wrapper main {
+		-ms-grid-row: 2;
+		-ms-grid-column: 2;
+	}
 }
 header h1 {
-  padding: 0 1em;
+	padding: 0 1em;
 }
 header nav {
-  background: #474747;
-  color: white;
+	background: #474747;
+	color: white;
 }
-header nav ul li {
-  /* volledige blokje klibaar maken */
-}
-header nav ul li:first-child, header nav ul li:nth-child(2) {
-  border-bottom: 1px white dotted;
+header nav ul li:first-child,
+header nav ul li:nth-child(2) {
+	border-bottom: 1px white dotted;
 }
 header nav ul li a {
-  display: block;
-  width: 100%;
-  padding: 0.5em 1em;
-  cursor: pointer;
+	/* volledige blokje klikbaar maken */
+	display: block;
+	width: 100%;
+	padding: 0.5em 1em;
+	cursor: pointer;
 }
 header nav ul li:hover {
-  background: #ececec;
-  color: initial;
+	background: #ececec;
+	color: initial;
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  header {
-    background: #373737;
-    color: white;
-    display: grid;
-    grid-template-columns: auto 1100px auto;
-    grid-template-areas: ". container .";
-  }
-  header .container {
-    grid-area: container;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header .container h1 {
-    padding: 0;
-  }
-  header .container nav {
-    background: none;
-  }
-  header .container nav ul {
-    display: flex;
-    align-items: center;
-  }
-  header .container nav ul li {
-    /* beetje vreemd om zonder border de volledige li klikbaar te maken, dus hier enkel de tekst */
-  }
-  header .container nav ul li:nth-child(1n+0) {
-    border-bottom: none;
-  }
-  header .container nav ul li a {
-    display: inline; /* 100% width vervalt hierdoor automatisch */
-    padding: 0;
-    margin-right: 1.5em;
-    cursor: pointer;
-  }
-  header .container nav ul li a:hover {
-    color: #5c90db;
-  }
-  header .container nav ul li:hover {
-    background: none;
-    color: white;
-  }
+	header {
+		background: #373737;
+		color: white;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: auto 1100px auto;
+		grid-template-columns: auto 1100px auto;
+		grid-template-areas: ". container .";
+	}
+	header .container {
+		grid-area: container;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	}
+	header .container h1 {
+		padding: 0;
+	}
+	header .container nav {
+		background: none;
+	}
+	header .container nav ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	header .container nav ul li:nth-child(1n + 0) {
+		border-bottom: none;
+	}
+	header .container nav ul li a {
+		/* beetje vreemd om zonder border de volledige li klikbaar te maken, dus hier enkel de tekst */
+		display: inline; /* 100% width vervalt hierdoor automatisch */
+		padding: 0;
+		margin-right: 1.5em;
+		cursor: pointer;
+	}
+	header .container nav ul li a:hover {
+		color: #5c90db;
+	}
+	header .container nav ul li:hover {
+		background: none;
+		color: white;
+	}
+}
+@media screen and (min-width: 640px) {
+	header .container {
+		-ms-grid-row: 1;
+		-ms-grid-column: 2;
+	}
 }
 aside {
-  background: #272727;
-  color: white;
+	background: #272727;
+	color: white;
 }
 aside section {
-  padding: 4% 0;
+	padding: 4% 0;
 }
 aside section:first-child {
-  background: #474747;
+	background: #474747;
 }
 aside section:nth-child(2) {
-  background: #373737;
+	background: #373737;
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  aside section {
-    padding: 4% 7%;
-  }
+	aside section {
+		padding: 4% 7%;
+	}
 }
 main span.special-text {
-  font-size: 1.2em;
-  font-weight: bold;
-  letter-spacing: 0.2em;
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: 0.2em;
 }
 main a {
-  color: revert;
+	color: revert;
 }
-main a:hover, main a:visited {
-  color: revert;
+main a:hover,
+main a:visited {
+	color: revert;
 }
 main img {
-  width: 100%; /* met een breedte van max 770px voor de main maakt het niet uit, maar als hij groter zou zijn zouden de afbeelding de volledige breedte niet in beslag nemen */
+	width: 100%; /* met een breedte van max 770px voor de main maakt het niet uit, maar als hij groter zou zijn zouden de afbeelding de volledige breedte niet in beslag nemen */
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  main {
-    background: white;
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
-  }
+	main {
+		background: white;
+		-webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+	}
 }
 .tags__tag {
-  display: flex;
-  background: #272727;
-  border-radius: 7px;
-  padding: 1em 0.5em;
-  margin-bottom: 0.5em;
-  cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background: #272727;
+	border-radius: 7px;
+	padding: 1em 0.5em;
+	margin-bottom: 0.5em;
+	cursor: pointer;
 }
 .tags__tag:hover {
-  background: #575757;
+	background: #575757;
 }
 .tags__tag a {
-  flex: 1;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
-.tags__tag input[type=checkbox] {
-  margin-right: 1.5em;
+.tags__tag input[type="checkbox"] {
+	margin-right: 1.5em;
 }
 
 /* GROTE SCHERMEN */
 @media screen and (min-width: 640px) {
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5em;
-  }
-  .gallery img {
-    width: 100%;
-    max-height: 85px;
-    object-fit: cover;
-    object-position: top;
-    border: 4px solid #ffc0cb;
-  }
+	.gallery {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 0.5em 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5em;
+	}
+	.gallery img {
+		width: 100%;
+		max-height: 85px;
+		-o-object-fit: cover;
+		object-fit: cover;
+		-o-object-position: top;
+		object-position: top;
+		border: 4px solid #ffc0cb;
+	}
 }
-
-/*# sourceMappingURL=styles.css.map */
