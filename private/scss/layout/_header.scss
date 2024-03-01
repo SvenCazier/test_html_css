@@ -1,0 +1,81 @@
+// _header.scss
+
+header {
+    h1 {
+        padding: 0 1em;
+    }
+
+    nav {
+        background: $color-grijs3;
+        color: white;
+        ul {
+            li {
+                /* volledige blokje klibaar maken */
+                &:first-child,
+                &:nth-child(2) {
+                    border-bottom: 1px white dotted;
+                }
+                a {
+                    display: block;
+                    width: 100%;
+                    padding: 0.5em 1em;
+                    cursor: pointer;
+                }
+                &:hover {
+                    background: $color-grijs5;
+                    color: initial;
+                }
+            }
+        }
+    }
+}
+
+/* GROTE SCHERMEN */
+@media screen and (min-width: 640px) {
+    header {
+        background: $color-grijs2;
+        color: white;
+        display: grid;
+        grid-template-columns: auto 1100px auto;
+        grid-template-areas: ". container .";
+
+        .container {
+            grid-area: container;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h1 {
+                padding: 0;
+            }
+
+            nav {
+                background: none;
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        &:nth-child(1n + 0) {
+                            border-bottom: none;
+                        }
+                        /* beetje vreemd om zonder border de volledige li klikbaar te maken, dus hier enkel de tekst */
+                        a {
+                            display: inline; /* 100% width vervalt hierdoor automatisch */
+                            padding: 0;
+                            margin-right: 1.5em;
+                            cursor: pointer;
+                            &:hover {
+                                color: $color-blauw;
+                            }
+                        }
+                        &:hover {
+                            background: none;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,9 +17,14 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-* {
+/* * {
     margin: 0;
     padding: 0;
+} */
+
+body {
+    padding: 0;
+    margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -55,10 +60,10 @@ h4 {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
+/* a:not([class]) {
     text-decoration-skip-ink: auto;
     color: currentColor;
-}
+} */
 
 /* Make images easier to work with */
 img,
@@ -90,4 +95,11 @@ textarea:not([rows]) {
 /* Voor alt text */
 img {
     font-style: italic;
+}
+
+/* Verwijder anchor tag styling */
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

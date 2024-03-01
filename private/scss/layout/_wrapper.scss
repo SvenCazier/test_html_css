@@ -1,0 +1,43 @@
+// _wrapper.scss
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "aside"
+        "main";
+
+    header {
+        grid-area: header;
+    }
+
+    aside {
+        grid-area: aside;
+        padding: 0 1em;
+    }
+
+    main {
+        grid-area: main;
+        padding: 0 1em;
+    }
+}
+
+/* GROTE SCHERMEN */
+@media screen and (min-width: 640px) {
+    .wrapper {
+        background: $color-rood url("../img/rothko/rothko17.jpg") no-repeat center center / cover;
+        grid-template-columns: 1fr clamp(0%, 70%, 770px) clamp(0%, 30%, 330px) 1fr;
+        grid-template-areas:
+            "header header header header"
+            ". main aside .";
+
+        aside {
+            padding: 0;
+        }
+
+        main {
+            padding: 4% 7%;
+        }
+    }
+}

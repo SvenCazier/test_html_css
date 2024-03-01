@@ -1,0 +1,25 @@
+// _aside.scss
+
+aside {
+    background: $color-grijs1;
+    color: white;
+
+    section {
+        padding: 4% 0;
+        &:first-child {
+            background: $color-grijs3;
+        }
+        &:nth-child(2) {
+            background: $color-grijs2;
+        }
+    }
+}
+
+/* GROTE SCHERMEN */
+@media screen and (min-width: 640px) {
+    aside {
+        section {
+            padding: 4% 7%;
+        }
+    }
+}

@@ -4,5 +4,10 @@
 @import "base/typography";
 @import "base/general";
 
-// Import media queries
-@import "media_queries/x640";
+@import "layout/wrapper";
+@import "layout/header";
+@import "layout/aside";
+@import "layout/main";
+
+@import "components/tags";
+@import "components/gallery";
