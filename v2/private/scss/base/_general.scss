@@ -1,0 +1,47 @@
+// _general.scss
+
+/* KLEUREN */
+
+body {
+    color: $color-tekst;
+}
+
+/* LISTS */
+
+ul,
+ol {
+    &.no-style {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* HELPER */
+
+.hidden--xs {
+    display: none;
+}
+
+/* GROTE SCHERMEN */
+@media screen and (min-width: 640px) {
+    /* LISTS */
+
+    ul,
+    ol {
+        &.no-style--lg {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    /* HELPER */
+
+    .hidden--xs {
+        display: block;
+    }
+    .hidden--lg {
+        display: none;
+    }
+}

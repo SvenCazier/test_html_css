@@ -1,0 +1,24 @@
+// _tags.scss
+
+.tags {
+    &__tag {
+        display: flex;
+        background: $color-grijs1;
+        border-radius: 7px;
+        padding: 1em 0.5em;
+        margin-bottom: 0.5em;
+        cursor: pointer;
+
+        &:hover {
+            background: $color-grijs4;
+        }
+
+        a {
+            flex: 1;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 1.5em;
+        }
+    }
+}

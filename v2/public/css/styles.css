@@ -1,0 +1,339 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+body {
+	padding: 0;
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+/* a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+} */
+/* Make images easier to work with */
+img,
+picture,
+svg,
+video {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/* Voor alt text */
+img {
+	font-style: italic;
+}
+
+/* Verwijder anchor tag styling */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* TYPOGRAFIE */
+body {
+	font-family: Poppins, system-ui, sans-serif;
+}
+
+/* KLEUREN */
+body {
+	color: #222222;
+}
+
+/* LISTS */
+ul.no-style,
+ol.no-style {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* HELPER */
+.hidden--xs {
+	display: none;
+}
+
+/* WRAPPER */
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: "header" "aside" "main";
+}
+.wrapper header {
+	grid-area: header;
+}
+.wrapper aside {
+	grid-area: aside;
+}
+.wrapper main {
+	grid-area: main;
+	padding: 0 1em;
+}
+
+/* HEADER */
+
+header h1 {
+	padding: 0 1rem;
+}
+header nav {
+	background: #474747;
+	color: white;
+}
+header nav ul li:first-child,
+header nav ul li:nth-child(2) {
+	border-bottom: 1px white dotted;
+}
+header nav ul li a {
+	/* volledige blokje klikbaar maken */
+	display: block;
+	width: 100%;
+	padding: 0.5em 1em;
+	cursor: pointer;
+}
+header nav ul li:hover {
+	background: #ececec;
+	color: initial;
+}
+
+/* ASIDE */
+
+aside {
+	background: #272727;
+	color: white;
+}
+aside section {
+	padding: 4% 1em;
+}
+aside section:first-child {
+	background: #474747;
+}
+aside section:nth-child(2) {
+	background: #373737;
+}
+
+/* MAIN */
+
+main span.special-text {
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+}
+main a {
+	color: revert;
+}
+main a:hover,
+main a:visited {
+	color: revert;
+}
+main img {
+	width: 100%; /* met een breedte van max 770px voor de main maakt het niet uit, maar als hij groter zou zijn zouden de afbeelding de volledige breedte niet in beslag nemen */
+}
+
+/* GROTE SCHERMEN */
+@media screen and (min-width: 640px) {
+	/* TYPOGRAFIE */
+
+	h1 {
+		font-size: 2.2em;
+	}
+	h2 {
+		font-size: 1.7em;
+	}
+
+	/* LISTS */
+	ul.no-style--lg,
+	ol.no-style--lg {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	/* HELPER */
+	.hidden--xs {
+		display: block;
+	}
+	.hidden--lg {
+		display: none;
+	}
+
+	/* WRAPPER */
+
+	.wrapper {
+		background: #ff0000 url("../img/rothko/rothko17.jpg") no-repeat center center/cover;
+		grid-template-columns: auto 1fr auto;
+		grid-template-areas: "header header header" ". container .";
+	}
+	.container {
+		grid-area: container;
+		max-width: 1100px;
+	}
+	.container.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.container.content {
+		display: grid;
+		grid-template-columns: 70% 30%;
+		grid-template-areas: "main aside";
+		margin: 0 auto;
+	}
+	.container.content main {
+		padding: 4% 7%;
+	}
+
+	/* HEADER */
+
+	header {
+		background: #373737;
+		color: white;
+		display: grid;
+		grid-template-columns: auto 1100px auto;
+		grid-template-areas: ". container .";
+	}
+	header .container {
+		grid-area: container;
+	}
+	header .container h1 {
+		padding: 0;
+	}
+	header .container nav {
+		background: none;
+	}
+	header .container nav ul {
+		display: flex;
+		align-items: center;
+	}
+	header .container nav ul li:nth-child(1n + 0) {
+		border-bottom: none;
+	}
+	header .container nav ul li a {
+		/* beetje vreemd om zonder border de volledige li klikbaar te maken, dus hier enkel de tekst */
+		display: inline; /* 100% width vervalt hierdoor automatisch */
+		padding: 0;
+		margin-right: 1.5em;
+		cursor: pointer;
+	}
+	header .container nav ul li a:hover {
+		color: #5c90db;
+	}
+	header .container nav ul li:hover {
+		background: none;
+		color: white;
+	}
+
+	/* ASIDE */
+
+	aside section {
+		padding: 4% 7%;
+	}
+
+	/* MAIN */
+
+	main {
+		background: white;
+		box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+	}
+
+	/* TAGS */
+	/* niet zichtbaar op kleine schermen, maar toch maar verhuisd naar hier voor de duidelijkheid */
+	.tags__tag {
+		display: flex;
+		background: #272727;
+		border-radius: 7px;
+		padding: 1em 0.5em;
+		margin-bottom: 0.5em;
+		cursor: pointer;
+	}
+	.tags__tag:hover {
+		background: #575757;
+	}
+	.tags__tag a {
+		flex: 1;
+	}
+	.tags__tag input[type="checkbox"] {
+		margin-right: 1.5em;
+	}
+
+	/* GALLERIJ */
+
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5em;
+	}
+	.gallery img {
+		width: 100%;
+		max-height: 85px;
+		object-fit: cover;
+		object-position: top;
+		border: 4px solid #ffc0cb;
+	}
+}

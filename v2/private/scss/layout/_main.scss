@@ -1,0 +1,29 @@
+// _main.scss
+
+main {
+    span.special-text {
+        font-size: 1.2em;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+    }
+
+    a {
+        color: revert;
+        &:hover,
+        &:visited {
+            color: revert;
+        }
+    }
+
+    img {
+        width: 100%; /* met een breedte van max 770px voor de main maakt het niet uit, maar als hij groter zou zijn zouden de afbeelding de volledige breedte niet in beslag nemen */
+    }
+}
+
+/* GROTE SCHERMEN */
+@media screen and (min-width: 640px) {
+    main {
+        background: white;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    }
+}
